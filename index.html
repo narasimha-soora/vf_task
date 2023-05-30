@@ -18,6 +18,7 @@
       /* font-family: 'RobotLight';
       src: url('./Roboto/Roboto-Light.ttf') format('truetype'); */
     }
+
     @font-face {
       font-family: 'RobotLight';
       src: url('./Roboto/Roboto-Light.ttf') format('truetype');
@@ -37,7 +38,7 @@
 
     .logo img {
       height: 70px;
-      margin-left: 7em;
+      margin-left: 5em;
     }
 
     .nav-links {
@@ -60,6 +61,43 @@
     .nav-links li i {
       margin-left: 5px;
     }
+			
+    /* Styles for dropdown menu */
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 200px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        padding: 10px;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown-content a {
+        color: #333;
+        text-decoration: none;
+        display: block;
+        padding: 5px;
+    }
+
+    /* Styles for dropdown symbol */
+    .dropdown-symbol::after {
+        content: '\25BC';
+        font-size: 8px;
+        position: absolute;
+        top: 50%;
+        right: -5px;
+        transform: translateY(-50%);
+    }
+
 
     .search-box {
       display: flex;
@@ -133,6 +171,7 @@
       font-weight: 100;
       font-family: RobotLight;
     }
+
     .image-text input {
       padding: 1em;
       background-color: #42f5b9;
@@ -141,63 +180,66 @@
       font-weight: 200;
       cursor: pointer;
     }
+
     .box {
       width: 85%;
-	  height: 60% !important;
+      height: 60% !important;
       border: 1px solid #ccc;
-    
+
       overflow: hidden;
-	  background:gainsboro;
-	  margin:auto;
+      background: gainsboro;
+      margin: auto;
     }
 
-       .box img {
-	   width: 45%;
-    height: 85%;
-    float: right;
-    margin-right: 4px;
-    border-radius: 65px;
-	padding:50px;
+    .box img {
+      width: 45%;
+      height: 85%;
+      float: right;
+      margin-right: 4px;
+      border-radius: 65px;
+      padding: 50px;
 
     }
 
     .box-content {
 
-margin:5%;
+      margin: 5%;
       overflow: hidden;
     }
 
     .button {
       display: inline-block;
       padding: 10px 20px;
-      background-color:#42f5b9;
+      background-color: #42f5b9;
       color: #fff;
       text-decoration: none;
       border-radius: 0.5em;
     }
-.box2 {
+
+    .box2 {
       width: 85%;
-	  height: 60%;
+      height: 60%;
       border: 1px solid #ccc;
-	    margin:auto;
-     
+      margin: auto;
+
       overflow: hidden;
-	  background:#0a0a0a;
-	  
+      background: #0a0a0a;
+
     }
 
-       .box2 img {
-	   width: 45%;
-    height: 85%;
-    float: left;
-    margin-right: 4px;
-	 border-radius: 65px;
-	 padding:50px;
-	
+    .box2 img {
+      width: 45%;
+      height: 85%;
+      float: left;
+      margin-right: 4px;
+      border-radius: 65px;
+      padding: 50px;
+
     }
-.box-content{
- color:white;
-}
+
+    .box-content {
+      color: white;
+    }
 
 
 
@@ -215,46 +257,89 @@ margin:5%;
       flex-wrap: wrap;
       justify-content: space-between;
     }
-    
+
     .car-list-item {
-      width: calc(33.33% - 10px);
+      width: calc(100% - 20px);
       margin-bottom: 20px;
       padding: 20px;
       box-sizing: border-box;
-	  border: 2px solid grey;
-	  border-radius: 20px;
-	  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+      border: 2px solid grey;
+      border-radius: 20px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     }
-    
+
     .car-list-item img {
       max-width: 100%;
       height: auto;
       margin-bottom: 10px;
     }
-    
+
     .car-list-item p {
       margin: 0;
     }
-    
-    .carousel {
-      margin-top: 40px;
-    }
-    
-    .carousel-item {
-      text-align: center;
-    }
-    
-    .carousel-item img {
-      max-width: 100%;
-      height: auto;
-    }
-.brand-heading{
 
-margin-left:10%;
-padding-top:20px;
-}.bmw{
-    width: 70%;
-    margin: auto;}
+    .brand-heading {
+      margin-left: 10%;
+      padding-top: 20px;
+    }
+
+    .bmw {
+      width: 85%;
+      margin: auto;
+    }
+
+    /* Slider */
+    .secion-2 {
+      display: flex;
+      justify-content: center;
+    }
+
+    .slider-wrapper {
+      overflow: hidden;
+    }
+
+    .slider {
+      /* position: relative; */
+      display: flex;
+      transition: 0.5s;
+    }
+
+    .item {
+      flex: 1 0 33.4%;
+    }
+
+    .rotate-image {
+      transform: rotate(90deg);
+      padding-left: 7.5em;
+      margin-top: -7.5em;
+      height: 150%;
+      width: 75%;
+      top: 0;
+      /* Adjust the rotation angle as needed */
+    }
+
+    .slider-controls {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+      z-index: 1000;
+      position: relative;
+    }
+
+    .slider-controls button {
+      border: 1px solid #ccc;
+      border-radius: 1em;
+      font-size: 1.25em;
+      font-weight: 100;
+      padding: 0.25em;
+      padding-left: 0.5em;
+      padding-right: 0.5em;
+      top: 50%
+    }
+
+    .slider-controls i {
+      cursor: pointer;
+    }
   </style>
 </head>
 
@@ -264,10 +349,43 @@ padding-top:20px;
       <img src="./assets/logo.png" alt="Logo">
     </div>
     <ul class="nav-links">
-      <li><a href="#">New Cars</a> <i class="fa fa-light fa-angle-down"></i></li>
-      <li><a href="#">Used Cars</a><i class="fa fa-light fa-angle-down"></i></li>
-      <li><a href="#">Servicing</a><i class="fa fa-light fa-angle-down"></i></li>
-      <li><a href="#">Commercials</a><i class="fa fa-light fa-angle-down"></i></li>
+    <li class="dropdown">
+                <a href="#">NewCars <span class="dropdown-symbol"></span></a>
+                <div class="dropdown-content">
+                    <a href="#">Sedans</a>
+                    <a href="#">SUVs</a>
+                    <a href="#">Sports Cars</a>
+                </div>
+            </li>
+	
+                    
+                </div>
+            </li>
+	<li class="dropdown">
+                <a href="#">UsedCars <span class="dropdown-symbol"></span></a>
+                      <div class="dropdown-content">
+                    <a href="#">Sedans</a>
+                    <a href="#">SUVs</a>
+                    <a href="#">Sports Cars</a>
+                </div>
+	</li>
+
+	     <li class="dropdown">
+                <a href="#">Services<span class="dropdown-symbol"></span></a>
+                <div class="dropdown-content">
+                    <a href="#">Maintenance</a>
+                    <a href="#">Repairs</a>
+                    <a href="#">Tuning</a>
+                </div>
+            </li>
+     <li class="dropdown">
+                <a href="#">Commercials<span class="dropdown-symbol"></span></a>
+                <div class="dropdown-content">
+                    <a href="#">M</a>
+                    <a href="#">R</a>
+                    <a href="#">T</a>
+                </div>
+            </li>
       <li><a href="#">Mobility</a></li>
     </ul>
     <div class="search-box">
@@ -290,29 +408,81 @@ padding-top:20px;
           to the sporty ST-Line, the eith generation <br>
           Fiesta impresses accross the range <br>
         </p>
-        <input type="submit" value="Book a test drive"  />
+        <input type="submit" value="Book a test drive" />
       </div>
     </div>
   </section>
-  
+
   <h1 class="brand-heading" styele"> BMW I4 Trims </h1>
-  
+
   <section class="bmw">
-  <div class="car-list">
-    <div class="car-list-item">
-      <img src="./assets/MicrosoftTeams-image (2).png" alt="M50">
-      <p>Description of Car 1</p>
+    <div class="slider-wrapper" data-items="3">
+      <div class="slider-controls">
+        <button class="prev" type="button"><i class="fas fa-angle-left" id="prev"></i></button>
+        <button class="next" type="button"><i class="fas fa-angle-right" id="next"></i></button>
+      </div>
+      <div class="slider">
+        <div class="item">
+          <div class="car-list-item">
+            <img class="rotate-image" src="./assets/MicrosoftTeams-image (2).png" alt="M50">
+            <p>Description of Car 1</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="car-list-item">
+            <img src="./assets/MicrosoftTeams-image (1).png" alt="M Sport">
+            <p>Description of Car 2</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="car-list-item">
+            <img src="./assets/MicrosoftTeams-image.png" alt="Sport">
+            <p>Description of Car 3</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="car-list-item">
+            <img src="./assets/MicrosoftTeams-image (1).png" alt="M Sport">
+            <p>Description of Car 2</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="car-list-item">
+            <img src="./assets/MicrosoftTeams-image.png" alt="Sport">
+            <p>Description of Car 3</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="car-list-item">
+            <img src="./assets/MicrosoftTeams-image (1).png" alt="M Sport">
+            <p>Description of Car 2</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="car-list-item">
+            <img src="./assets/MicrosoftTeams-image.png" alt="Sport">
+            <p>Description of Car 3</p>
+          </div>
+        </div>
+        <!-- Never use inline style. This is just for demo. -->
+      </div>
+
     </div>
-    <div class="car-list-item">
-      <img src="./assets/MicrosoftTeams-image (1).png" alt="M Sport">
-      <p>Description of Car 2</p>
-    </div>
-    <div class="car-list-item">
-      <img src="./assets/MicrosoftTeams-image.png"alt="	Sport">
-      <p>Description of Car 3</p>
-    </div>
-  </section>	
- <div class="carousel">
+    <!-- <div class="car-list">
+      <div class="car-list-item">
+        <img src="./assets/MicrosoftTeams-image (2).png" alt="M50">
+        <p>Description of Car 1</p>
+      </div>
+      <div class="car-list-item">
+        <img src="./assets/MicrosoftTeams-image (1).png" alt="M Sport">
+        <p>Description of Car 2</p>
+      </div>
+      <div class="car-list-item">
+        <img src="./assets/MicrosoftTeams-image.png" alt="	Sport">
+        <p>Description of Car 3</p>
+      </div> -->
+  </section>
+  <!-- <div class="carousel">
     <div class="carousel-item">
       <img src="car10.jpg" alt="Car 10">
     </div>
@@ -325,9 +495,9 @@ padding-top:20px;
     <div class="carousel-item">
       <img src="car13.jpg" alt="Car 13">
     </div>
-  </div>
+  </div> -->
 
- <!-- <section>
+  <!-- <section>
     <div class="section-3">
       <div>Explore new interior</div>
       <div>Electrifying Performnce</div>
@@ -351,6 +521,27 @@ padding-top:20px;
   </div>
 
   <script src="script.js"></script>
+  <script>
+    const ELS = (sel, par) => (par || document).querySelectorAll(sel);
+    const EL = (sel, par) => (par || document).querySelector(sel);
+    const mod = (n, m) => (n % m + m) % m;
+
+    ELS(".slider-wrapper").forEach(EL_par => {
+      const EL_slider = EL(".slider", EL_par);
+      const ELS_items = ELS(".item", EL_par);
+      const sub = +EL_par.dataset.items ?? 1;
+      const tot = Math.ceil(ELS_items.length / sub);
+      let c = 0;
+
+      const anim = () => EL_slider.style.transform = `translateX(-${c * 100}%)`;
+      const prev = () => (c = mod(c - 1, tot), anim());
+      const next = () => (c = mod(c + 1, tot), anim());
+
+      EL(".prev", EL_par).addEventListener("click", prev);
+      EL(".next", EL_par).addEventListener("click", next);
+    });
+
+  </script>
 </body>
 
 </html>
