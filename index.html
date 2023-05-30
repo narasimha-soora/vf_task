@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/2f1fa596dd.js" crossorigin="anonymous"></script>
+
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <title>Basic HTML Page</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    @font-face {
+      font-family: 'CustomFont';
+      src: url('./Roboto/Roboto-Black.ttf') format('truetype');
+      /* Add more src lines for additional font file formats, if available */
+      /* font-family: 'RobotLight';
+      src: url('./Roboto/Roboto-Light.ttf') format('truetype'); */
+    }
+    @font-face {
+      font-family: 'RobotLight';
+      src: url('./Roboto/Roboto-Light.ttf') format('truetype');
+    }
+
+    body {
+      font-family: 'CustomFont', Arial, sans-serif;
+      margin: 0;
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #fff;
+    }
+
+    .logo img {
+      height: 70px;
+      margin-left: 7em;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      font-size: 15px;
+      font-weight: 800;
+      word-wrap: break-word;
+    }
+
+    .nav-links li {
+      margin-right: 30px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #000;
+    }
+
+    .nav-links li i {
+      margin-left: 5px;
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      background-color: #f0f0f0;
+      padding: 5px 10px;
+      border-radius: 20px;
+    }
+
+    .search-box i {
+      margin-right: 5px;
+    }
+
+    .search-box input[type="text"] {
+      border: none;
+      background-color: transparent;
+      outline: none;
+      padding: 5px;
+      width: 20em;
+    }
+
+    .nav-icons {
+      display: flex;
+      list-style: none;
+      font-size: 1.5em;
+      margin-right: 15em;
+    }
+
+    .nav-icons li {
+      margin-right: 1em;
+    }
+
+    .nav-icons span {
+      text-decoration: none;
+      color: #000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .nav-icons i {
+      margin-right: 5px;
+    }
+
+    .nav-icons span {
+      font-size: 10px;
+    }
+
+    .image-container {
+      position: relative;
+      display: flex;
+      justify-content: center;
+
+    }
+
+    .image-text {
+      position: absolute;
+      top: 35%;
+      left: 25%;
+      transform: translate(-50%, -50%);
+      color: white;
+      padding: 10px;
+    }
+
+    .image-text h1 {
+      font-size: 2.75em;
+    }
+
+    .image-text p {
+      font-size: 1.25em;
+      font-weight: 100;
+      font-family: RobotLight;
+    }
+    .image-text input {
+      padding: 1em;
+      background-color: #42f5b9;
+      border-radius: 0.5em;
+      font-size: 1em;
+      font-weight: 200;
+      cursor: pointer;
+    }
+    .box {
+      width: 85%;
+	  height: 60% !important;
+      border: 1px solid #ccc;
+    
+      overflow: hidden;
+	  background:gainsboro;
+	  margin:auto;
+    }
+
+       .box img {
+	   width: 45%;
+    height: 85%;
+    float: right;
+    margin-right: 4px;
+    border-radius: 65px;
+	padding:50px;
+
+    }
+
+    .box-content {
+
+margin:5%;
+      overflow: hidden;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color:#42f5b9;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 0.5em;
+    }
+.box2 {
+      width: 85%;
+	  height: 60%;
+      border: 1px solid #ccc;
+	    margin:auto;
+     
+      overflow: hidden;
+	  background:#0a0a0a;
+	  
+    }
+
+       .box2 img {
+	   width: 45%;
+    height: 85%;
+    float: left;
+    margin-right: 4px;
+	 border-radius: 65px;
+	 padding:50px;
+	
+    }
+.box-content{
+ color:white;
+}
+
+
+
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #42f5b9;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 0.5em;
+    }
+
+    .car-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    
+    .car-list-item {
+      width: calc(33.33% - 10px);
+      margin-bottom: 20px;
+      padding: 20px;
+      box-sizing: border-box;
+	  border: 2px solid grey;
+	  border-radius: 20px;
+	  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    }
+    
+    .car-list-item img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+    
+    .car-list-item p {
+      margin: 0;
+    }
+    
+    .carousel {
+      margin-top: 40px;
+    }
+    
+    .carousel-item {
+      text-align: center;
+    }
+    
+    .carousel-item img {
+      max-width: 100%;
+      height: auto;
+    }
+.brand-heading{
+
+margin-left:10%;
+padding-top:20px;
+}.bmw{
+    width: 70%;
+    margin: auto;}
+  </style>
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="./assets/logo.png" alt="Logo">
+    </div>
+    <ul class="nav-links">
+      <li><a href="#">New Cars</a> <i class="fa fa-light fa-angle-down"></i></li>
+      <li><a href="#">Used Cars</a><i class="fa fa-light fa-angle-down"></i></li>
+      <li><a href="#">Servicing</a><i class="fa fa-light fa-angle-down"></i></li>
+      <li><a href="#">Commercials</a><i class="fa fa-light fa-angle-down"></i></li>
+      <li><a href="#">Mobility</a></li>
+    </ul>
+    <div class="search-box">
+      <i class="fas fa-search"></i>
+      <input type="text" placeholder='Search: "Make, Model, Location" '>
+      <i class="fa fal fa-microphone"></i>
+    </div>
+    <ul class="nav-icons">
+      <li><i class="fa far fa-map-marker"></i><span href="#">Find Us</span></li>
+      <li><i class="far fa-heart"></i><span href="#"> Save</span></li>
+      <li><i class="far fa-user"></i><span href="#"> Login</span></li>
+    </ul>
+  </nav>
+  <section>
+    <div class="image-container">
+      <img width="85%" src="./assets/MicrosoftTeams-image (4).png" />
+      <div class="image-text">
+        <h1>Explore the new <br> BMW i4 range</h1>
+        <p>From the cool trent and SUV-inspired Active <br>
+          to the sporty ST-Line, the eith generation <br>
+          Fiesta impresses accross the range <br>
+        </p>
+        <input type="submit" value="Book a test drive"  />
+      </div>
+    </div>
+  </section>
+  
+  <h1 class="brand-heading" styele"> BMW I4 Trims </h1>
+  
+  <section class="bmw">
+  <div class="car-list">
+    <div class="car-list-item">
+      <img src="./assets/MicrosoftTeams-image (2).png" alt="M50">
+      <p>Description of Car 1</p>
+    </div>
+    <div class="car-list-item">
+      <img src="./assets/MicrosoftTeams-image (1).png" alt="M Sport">
+      <p>Description of Car 2</p>
+    </div>
+    <div class="car-list-item">
+      <img src="./assets/MicrosoftTeams-image.png"alt="	Sport">
+      <p>Description of Car 3</p>
+    </div>
+  </section>	
+ <div class="carousel">
+    <div class="carousel-item">
+      <img src="car10.jpg" alt="Car 10">
+    </div>
+    <div class="carousel-item">
+      <img src="car11.jpg" alt="Car 11">
+    </div>
+    <div class="carousel-item">
+      <img src="car12.jpg" alt="Car 12">
+    </div>
+    <div class="carousel-item">
+      <img src="car13.jpg" alt="Car 13">
+    </div>
+  </div>
+
+ <!-- <section>
+    <div class="section-3">
+      <div>Explore new interior</div>
+      <div>Electrifying Performnce</div>
+    </div>
+  </section> -->
+  <div class="box">
+    <img src="./assets/MicrosoftTeams-image (6).png">
+    <div class="box-content">
+      <h2>Explore the New BMW interior</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum lacinia feugiat nibh at gravida.</p>
+      <a href="demo.html" class="button">Request a Demo</a>
+    </div>
+  </div>
+  <div class="box2">
+    <img src="./assets/MicrosoftTeams-image (5).png">
+    <div class="box-content">
+      <h2>Electrifying performance with the BM4 I4</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum lacinia feugiat nibh at gravida.</p>
+      <a href="bookdrive.html" class="button">Book a test Drive</a>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
